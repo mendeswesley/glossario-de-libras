@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossário de Libras</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input { padding: 10px; width: 80%; margin: 10px 0; }
+        .word-container { display: none; margin-top: 20px; }
+        .word-container img { width: 300px; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Glossário de Libras</h1>
+    <input type="text" id="search" placeholder="Digite uma palavra..." oninput="searchWord()">
+    <div id="result" class="word-container">
+        <h2 id="word"></h2>
+        <img id="sign" src="" alt="Sinal em Libras">
+    </div>
+    
+    <script>
+        const glossary = {
+            "oi": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/oi.gif",
+            "bom dia": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Bom-dia.gif",
+            "boa tarde": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Boa-tarde.gif",
+            "boa noite": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Boa-noite.gif",
+            "obrigado": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Obrigado.gif",
+            "de nada": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/De-nada.gif",
+            "legal": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Legal.gif",
+            "por favor": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Por-favor.gif",
+            "tchau": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Tchau.gif",
+            "ok": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/ok.gif",
+            "beber": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Beber-1.gif",
+            "comer": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Comer-1.gif",
+            "brincar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Brincar-1.gif",
+            "falar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Falar-1.gif",
+            "amar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Amar-1.gif",
+            "inverno": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Inverno-1.gif",
+            "outono": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Outono-1.gif",
+            "primavera": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Primavera-1.gif",
+            "verão": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Verao-1.gif"
+
+
+        };
+
+        function searchWord() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let resultDiv = document.getElementById("result");
+            let wordTitle = document.getElementById("word");
+            let signImg = document.getElementById("sign");
+
+            if (glossary[input]) {
+                wordTitle.textContent = input;
+                signImg.src = glossary[input];
+                resultDiv.style.display = "block";
+            } else {
+                resultDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
