@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário de Libras</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    .word-container { display: none; margin-top: 20px; }
+    .word-container img { width: 300px; height: auto; }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .word-list span {
+      margin: 0 10px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #0077cc;
+    }
+
+    .word-list span:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Glossário de Libras</h1>
+
+  <div class="section">
+    <div class="section-title">Saudações</div>
+    <div class="word-list">
+      <span onclick="showWord('Oi')">Oi</span> •
+      <span onclick="showWord('Bom dia')">Bom dia</span> •
+      <span onclick="showWord('Boa tarde')">Boa tarde</span> •
+      <span onclick="showWord('Boa noite')">Boa noite</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Agradecimentos</div>
+    <div class="word-list">
+      <span onclick="showWord('Obrigado')">Obrigado</span> •
+      <span onclick="showWord('De nada')">De nada</span>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">Estações do Ano</div>
+    <div class="word-list">
+      <span onclick="showWord('Inverno')">Inverno</span> •
+      <span onclick="showWord('Outono')">Outono</span> •
+      <span onclick="showWord('Primavera')">Primavera</span> •
+      <span onclick="showWord('Verão')">Verão</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Verbos</div>
+    <div class="word-list">
+        <span onclick="showWord('Beber')">Beber</span> •
+        <span onclick="showWord('Comer')">Comer</span> •
+        <span onclick="showWord('Brincar')">Brincar</span> •
+        <span onclick="showWord('Falar')">Falar</span> •
+        <span onclick="showWord('Amar')">Amar</span> •
+        <span onclick="showWord('Lembrar')">Lembrar</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Adjetivos</div>
+    <div class="word-list">
+        <span onclick="showWord('Alegre')">Alegre</span> •
+        <span onclick="showWord('Feliz')">Feliz</span> •
+        <span onclick="showWord('Bonito(a)')">Bonito(a)</span> •
+        <span onclick="showWord('Magro(a)')">Magro(a)</span> •
+        <span onclick="showWord('Gordo(a)')">Gordo(a)</span> •
+        <span onclick="showWord('Mentira')">Mentira</span> •
+        <span onclick="showWord('Inteligente')">Inteligente</span> •
+        <span onclick="showWord('Medo')">Medo</span> •
+        <span onclick="showWord('Pobre')">Pobre</span> •
+        <span onclick="showWord('Legal')">Legal</span> •
+        <span onclick="showWord('Sério(a)')">Sério(a)</span>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Família</div>
+    <div class="word-list">
+        <span onclick="showWord('Familia')">Família</span> •
+        <span onclick="showWord('Filho(a)')">Filho(a)</span> •
+        <span onclick="showWord('Gêmeos(a)')">Gêmeos(a)</span> •
+        <span onclick="showWord('Irmãos')">Irmãos</span> •
+        <span onclick="showWord('Namorado(a)')">Namorado(a)</span> •
+        <span onclick="showWord('Casado(a)')">Casado(a)</span> •
+        <span onclick="showWord('Genro')">Genro</span> •
+        <span onclick="showWord('Nora')">Nora</span> •
+        <span onclick="showWord('Cunhado(a)')">Cunhado(a)</span> •
+        <span onclick="showWord('Tio(a)')">Tio(a)</span> •
+        <span onclick="showWord('Primo(a)')">Primo(a)</span>
+        
+    </div>
+  </div>
+  
+  <div id="result" class="word-container">
+    <h2 id="word"></h2>
+    <img id="sign" src="" alt="Sinal em Libras">
+  </div>
+
+  <script>
+    const glossary = {
+        //Saudações
+      "Oi": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/oi.gif",
+      "Bom dia": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Bom-dia.gif",
+      "Boa tarde": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Boa-tarde.gif",
+      "Boa noite": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Boa-noite.gif",
+        //Agradecimentos
+      "Obrigado": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/Obrigado.gif",
+      "De nada": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/03/De-nada.gif",
+        //Estações
+      "Inverno": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Inverno-1.gif",
+      "Outono": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Outono-1.gif",
+      "Primavera": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Primavera-1.gif",
+      "Verão": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/09/Verao-1.gif",
+        //Verbos
+      "Beber": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Beber-1.gif",
+      "Comer": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Comer-1.gif",
+      "Brincar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Brincar-1.gif",
+      "Falar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Falar-1.gif",
+      "Amar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Amar-1.gif",
+      "Lembrar": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Lembrar-1.gif",
+        //Adjetivos
+      "Alegre": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Alegre-1.gif",
+      "Feliz": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Feliz-1.gif",
+      "Bonito(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Bonit@-1.gif",
+      "Magro(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Magr@-1.gif",
+      "Gordo(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Gord@-1.gif",
+      "Mentira": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Mentira-1.gif",
+      "Inteligente": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Inteligente-1.gif",
+      "Medo": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Medo-1.gif",
+      "Pobre": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Pobre-1.gif",
+      "Legal": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Legal-1.gif",
+      "Sério(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/08/Seri@-1.gif",
+        //Família
+      "Familia": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/familia-1.gif",
+      "Filho(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/filh@.gif",
+      "Gêmeos(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/Geme@.gif",
+      "Irmãos": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/irmaos-1.gif",
+      "Namorado(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/namorad@.gif",
+      "Casado(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/casad@.gif",
+      "Genro": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/genro-1.gif",
+      "Nora": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/nora-2.gif",
+      "Cunhado(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/cunhad@.gif",
+      "Tio(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/ti@.gif",
+      "Primo(a)": "https://ifpr.edu.br/umuarama/wp-content/uploads/sites/26/2021/04/prim@.gif"
+    
+    };
+
+    function showWord(word) {
+      const resultDiv = document.getElementById("result");
+      const wordTitle = document.getElementById("word");
+      const signImg = document.getElementById("sign");
+
+      if (glossary[word]) {
+        wordTitle.textContent = word;
+        signImg.src = glossary[word];
+        resultDiv.style.display = "block";
+      } else {
+        resultDiv.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
