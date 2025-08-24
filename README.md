@@ -25,6 +25,7 @@ glossario-de-libras/
 ├── index.html            # versão final do site
 ├── old_versions/         # versões anteriores do projeto (arquivos históricos)
 │   └── antigo_index.html
+├── LICENSE.md            # licença do projeto
 └── README.md             # documentação do projeto
 ```
 
@@ -48,4 +49,4 @@ Este projeto está disponível via **GitHub Pages**:
 ---
 
 ## 📄 Licença
-Este projeto está sob a licença MIT.
+Este projeto está sob a licença [MIT](./LICENSE.md).
