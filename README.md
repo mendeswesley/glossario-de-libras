@@ -54,3 +54,8 @@ Este projeto está disponível via **GitHub Pages**:
 
 ## 📄 Licença
 Este projeto está sob a licença [MIT](./LICENSE.md).
+
+---
+
+## 👨‍💻 Autor
+Desenvolvido por [Wesley Mendes](https://github.com/mendeswesley).
